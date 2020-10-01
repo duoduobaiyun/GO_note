@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>新用户注册</title>
+</head>
+<style>
+    body {
+        font-family: Verdana;
+        background: url("http://view.jqueryfuns.com/2019/10/8/66c97ae3a39654c0039ac03d2fd07cec/images/1.jpg") no-repeat 0px 0px;
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+    }
+    h1 {
+        color: #FFF;
+        text-align: center;
+        letter-spacing: 6px;
+        font-size: 40px;
+        margin-top: 75px;
+    }
+    #cp{
+        background:#009FCC;
+        font-size:24px;
+        padding:5px;
+        color:white;
+    }
+    #postion {
+        margin: 150px auto;
+    }
+    form{
+        background: #F8F8FF ;
+        border:#357FC4 solid 1px;
+        color:#575454;
+        width:400px;
+        margin:20px auto;
+        font-size:15px;
+    }
+    table{
+        margin:10px auto;
+    }
+    td:first-child{
+        text-align:right;
+        padding:0 5px;
+    }
+    td:only-child{
+        text-align:center;
+        font-size:12px;
+    }
+</style>
+<body>
+<h1>Login Was Successful</h1>
+<div id="postion">
+    <form action="/" method="post">
+        <div id="cp">注册账号</div>
+        <table>
+            <tr>
+                <td><span>用户名:</span></td>
+                <td>
+                    <p>{{.Name}}</p>
+                </td>
+            </tr>
+            <tr>
+                <td><span>账    号:</span></td>
+                <td>
+                    <p>{{.UserName}}</p>
+                </td>
+            </tr>
+            <tr>
+                <td><span>email:</span></td>
+                <td>
+                    <p>{{.Email}}</p>
+                </td>
+            </tr>
+            <tr>
+            <tr>
+                <td>手机号码:</td>
+                <td>
+                    <p>{{.Phone}}</p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="submit" name="sub" value="NEXT" />
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+</body>
+</html>>

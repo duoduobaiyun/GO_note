@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>欢迎德莱联盟</title>
+    <style type="text/css">
+        * {
+            background-color: #fef4d9;
+            padding:0;margin:0;
+        }
+        body{
+            background:url("http://view.jqueryfuns.com/2019/10/8/66c97ae3a39654c0039ac03d2fd07cec/images/1.jpg") repeat-y  0px 0px;
+
+        }
+        table{
+            background:url("http://view.jqueryfuns.com/2019/10/8/66c97ae3a39654c0039ac03d2fd07cec/images/1.jpg") repeat 0px 0px;
+        }
+        #bigdiv{
+            width: 1920px;
+            height: 990px;
+            position: absolute;
+            left: 50%;
+            top: 0;
+            margin-left: -960px;
+            overflow: hidden;
+            background: url(//game.gtimg.cn/images/lol/act/a20200612summer/bg.jpg) no-repeat;
+        }
+        #neirong{
+            position:relative;
+            z-index: 9;
+            float:right;
+        }
+
+
+
+        table
+        {
+            border-collapse: collapse;
+            margin: 0 auto;
+            text-align: center;
+        }
+        table td, table th
+        {
+            border: 1px solid #cad9ea;
+            color: #002955;
+            height: 30px;
+        }
+        table thead th
+        {
+            background-color: #CCE8EB;
+            width: 100px;
+        }
+        table tr:nth-child(odd)
+        {
+            background: #fff;
+        }
+        table tr:nth-child(even)
+        {
+            background: #F5FAFA;
+        }
+        #photo{
+            width: 50px ;
+            height: 50px;
+        }
+        /*.page{*/
+        /*    text-align: center;*/
+        /*    margin-top: auto;*/
+        /*}*/
+        /* .page a , .page span{*/
+        /*     text-decoration: none;*/
+        /*     border: 1px solid #f9d52b;*/
+        /*     padding: 5px 7px;*/
+        /*     color: #767675;*/
+        /*     cursor: pointer ;*/
+        /* }*/
+        /* .page a:hover , .page span:hover{*/
+        /*     color: red;*/
+        /* }*/
+    </style>
+</head>
+<body>
+
+<audio id="music1" controls="controls" autoplay="autoplay" preload="auto" hidden>
+    <source src="https://game.gtimg.cn/images/lol/act/img/vo/choose/119.ogg" />
+</audio>
+
+<table border=0 bordercolor="#111111" borderlight=green style="border-collapse: collapse" cellpadding="0" cellspacing="0">
+    <hr>
+</table>
+<table>
+
+    </div>
+
+
+    <div id="neirong">
+        <caption>
+            <h2>英雄信息</h2>
+        </caption>
+        <tr>
+            <th>
+                英雄编号
+            </th>
+            <th>
+                英雄头像
+            </th>
+            <th>
+                英雄代号
+            </th>
+            <th>
+                英文名称
+            </th>
+            <th>
+                中文名称
+            </th>
+            <th>
+                选择语音
+            </th>
+            <th>
+                禁止语音
+            </th>
+        </tr>
+
+        {{range .Hero}}
+            <tr>
+                <td>{{.HeroId}}</td>
+                <td id="hero">
+                    <a href="https://lol.qq.com/data/info-defail.shtml?id={{.HeroId}}"><img src="//game.gtimg.cn/images/lol/act/img/champion/{{.Alias}}.png" alt="{{.Title}}" title="{{.Title}}"  id="photo"></a>
+                </td>
+                <td>{{.Name}}</td>
+                <td>{{.Alias}}</td>
+                <td>{{.Title}}</td>
+                <td>
+                    <audio controls = "controls" >
+                        <source src=" {{.SelectAudio}}" type="audio/ogg">
+                    </audio>
+                </td>
+                <td>
+                    <audio controls = "controls" >
+                        <source src=" {{.BanAudio}}" type="audio/ogg">
+                    </audio>
+                </td>
+
+            </tr>
+        {{end}}
+    </div>
+</table>
+</body>
+</html>

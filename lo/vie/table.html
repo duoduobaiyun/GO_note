@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        body{
+            background-image: url("../image/1.gif");
+            background-repeat: no-repeat;
+
+        }
+
+        table{
+            margin-left: 19%;
+            box-shadow: 0 0 50px rgb(166,124,64);
+        }
+
+        table.hovertable {
+            font-family: verdana,arial,sans-serif;
+            font-size:15px;
+            color:#333333;
+            border-width: 1px;
+            border-color: #999999;
+            border-collapse: collapse;
+            opacity: 0.8;
+        }
+
+        table.hovertable th {
+            height: 60px;
+            background-color:#E3D5C2;
+            border-width: 1px;
+            padding: 8px;
+            border-style: solid;
+            border-color: #E3D5C2;
+        }
+        table.hovertable tr {
+            background-color:#F7F4EF;
+        }
+
+        table.hovertable td {
+            border-width: 1px;
+            padding: 8px;
+            border-style: solid;
+            border-color: #E3D5C2;
+            height: 50px;
+            width: 100px;
+            text-align: center;
+            line-height: 100px;
+        }
+
+        table.hovertable td:hover{
+            background-color:#E3D5C2;
+            box-shadow: 0 0 50px #E3D5C2
+        }
+        /*rgb(166,124,64)*/
+    </style>
+</head>
+<body>
+
+<table class="hovertable">
+    <tr>
+        <th>英雄编号</th>
+        <th>英雄头像</th>
+        <th>英雄称呼</th>
+        <th>英雄别名</th>
+        <th>英雄标题</th>
+        <th>攻击值</th>
+        <th>防御值</th>
+        <th>法术值</th>
+    </tr>
+    {{range .Heroes}}
+    <tr onmouseover="this.style.backgroundColor='#F7F4EF';" onmouseout="this.style.backgroundColor='#F7F4EF';">
+        <td>{{.Id}}</td>
+        <td class="a1"><img style="display:block;" src="{{.ImgUrl}}"></td>
+        <td>{{.Name}}</td>
+        <td>{{.Alias}}</td>
+        <td>{{.Title}}</td>
+        <td>{{.Attack}}</td>
+        <td>{{.Defense}}</td>
+        <td>{{.Magic}}</td>
+    </tr>
+    {{end}}
+</table>
+</body>
+</html>

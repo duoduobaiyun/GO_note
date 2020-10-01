@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>主页面</title>
+    <style type="text/css">
+        * {
+            margin: 0px auto;
+            padding: 0px;
+        }
+
+        #header {
+            height: 200px;
+            background: #fed14e;
+            border: 1px black solid;
+        }
+
+        #head_portrait {
+            float: left;
+            width: 48px;
+            height: 48px;
+            position: relative;
+            margin-top: 14px;
+            line-height: 48px;
+            text-align: center;
+            font-size: 0;
+        }
+
+        #hero_body {
+            margin: 20px auto;
+        }
+
+        a:hover {
+            color: #00a383;
+            text-decoration: none;
+            /*cursor: pointer;*/
+        }
+
+        img {
+            width: 66px;
+            height: 65px;
+            display: block;
+            margin: 0 auto 7px;
+            cursor: pointer;
+        }
+
+        li {
+            float: left;
+            width: 90px;
+            height: 100px;
+            margin-bottom: 22px;
+            text-align: center;
+            line-height: 15px;
+            position: relative;
+            overflow: hidden;
+            display: list-item;
+        }
+
+        p {
+            display: block;
+            margin-block-start: 1em;
+            margin-block-end: 1em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+        }
+
+        .info-showbox {
+            padding: 30px 37px 30px 30px;
+            font: normal 12px/1.6em Microsoft YaHei,Tahoma,simsun;
+            color: #666;
+            margin-top: -1px;
+            background: #F7F8E9;
+            position: relative;
+            min-height: 500px;
+            /*_height: 500px;*/
+        }
+
+        .clearfix:after {
+            content: '\20';
+            display: block;
+            height: 0;
+            line-height: 0;
+            visibility: hidden;
+            clear: both;
+        }
+        ul  {
+            float: left;
+            padding: 30px 0 0;
+            position: relative;
+            display: block;
+            list-style-type: disc;
+            margin-block-start: 1em;
+            margin-block-end: 1em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+            padding-inline-start: 40px;
+        }
+        .wraper {
+            font: normal 12px/1.6em Microsoft YaHei,Tahoma,simsun;
+            color: #666;
+            min-width: 1240px;
+            margin: 0 auto;
+            background: #f7f8f8;
+            overflow: hidden;
+        }
+        .avatar {
+            display: inline-block;
+            vertical-align: middle;
+            *zoom: 1;
+            *display: inline;
+            width: 36px;
+            height: auto;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+<div id="header">
+    <div id="head_portrait">
+        <img class="avatar" src="//game.gtimg.cn/images/lol/v2/personal/avatar/default.png" width="36" height="auto" alt="玩家头像">
+    </div>
+</div>
+<div class="wraper">
+    <div id="hero_body" class="clearfix info-showbox">
+        <ul>
+            {{range .Hero}}
+                <li>
+                    <a>
+                        <img src="https://game.gtimg.cn/images/lol/act/img/champion/{{.Alias}}.png">
+                        <p>{{.Name}}</p>
+                    </a>
+                </li>
+            {{end}}
+        </ul>
+    </div>
+</div>
+<div id="foot">
+
+</div>
+</body>
+</html>

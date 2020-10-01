@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>豆瓣电影采集系统主页面</title>
+</head>
+<body>
+    <h4>欢迎：{{.AdminName}}</h4>
+    <table>
+        <tr>
+            <td>编号</td>
+            <td>电影名称</td>
+            <td>评分</td>
+            <td>评价人数</td>
+            <td>封面</td>
+        </tr>
+
+        {{range .Movies}}
+            <tr>
+                <td>{{.Id}}</td>
+                <td>{{.Name}}</td>
+                <td>{{.RateNum}}</td>
+                <td>{{.VoteNum}}</td>
+                <td>{{.CoverUrl}}</td>
+                <td><img src="{{.CoverUrl}}"/></td>
+            </tr>
+        {{end}}
+
+    </table>
+</body>
+</html>

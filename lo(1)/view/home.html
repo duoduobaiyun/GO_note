@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>英雄界面</title>
+    <style>
+        body::-webkit-scrollbar {
+            display: none;
+        }
+        body{
+            width: 1450px;
+        }
+        .main{
+            margin: 0 auto;
+            padding-left: 40px;
+            display:flex;
+            flex-flow: wrap;
+            width: 1510px;
+        }
+        .hero{
+            margin:5px;
+        }
+        .hero .pic img{
+            width:80px;
+        }
+        .hero .name {
+            display: flex;
+            font-size:14px;
+            justify-content: center;
+            align-items: center;
+        }
+        .pic img:hover{
+            box-shadow: 0 0 50px rgb(166,124,64)
+
+        }
+    </style>
+</head>
+<body style="background-color: lightgray">
+
+
+<div class="main">
+    {{range .Heroes}}
+        <div class="hero">
+            <div class="pic">
+                <a href="https://lol.qq.com/data/info-defail.shtml?id={{.Id}}"><img src="{{.ImgUrl}}"></a>
+            </div>
+            <div class="name">
+                {{.Title}}
+            </div>
+        </div>
+    {{end}}
+</div>
+
+
+
+</body>
+</html>

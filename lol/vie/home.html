@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>英雄信息</title>
+    <style type="text/css">
+        .tr1 td{
+            padding: 25px;
+        }
+        .div1{
+            width: 1510px;
+            height: auto;
+        }
+        .div1 img{
+            padding-left: 455px;
+        }
+    </style>
+</head>
+<body>
+<div class="div1"><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1592683184315&di=df108b7e07e8d9286aeff0edee4eae11&imgtype=0&src=http%3A%2F%2Fimg.sccnn.com%2Fbimg%2F339%2F12989.jpg"></div>
+<div class="div2">
+<table class="tab1" border="1" cellspacing="0" align="center" style=" border-color: darkgray" >
+    <tr class="tr1">
+        <td>英雄图片</td>
+        <td>英雄名字</td>
+        <td>英雄化名</td>
+        <td>英雄头衔</td>
+        <td>语音一</td>
+        <td>语音二</td>
+        <td>有无改动</td>
+    </tr>
+    {{range .Heros}}
+        <tr class="tr2" align="center">
+            <td><img src="{{.ImgUrl}}"></td>
+            <td>{{.Name}}</td>
+            <td>{{.Alias}}</td>
+            <td>{{.Title}}</td>
+            <td><embed height="50" width="100" src="{{.VoiceOne}}" autostart="false" /></td>
+            <td><embed height="50" width="100" src="{{.VoiceTwo}}" autostart="false" /></td>
+            <td>{{.Label}}</td>
+        </tr>
+    {{end}}
+</table>
+</div>
+</body>
+</html>

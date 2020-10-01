@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <style type="text/css">
+        * {
+            /*background-image: url("../image/4.jpg");*/
+            /*background-size: cover;*/
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-image: url("http://hbimg.b0.upaiyun.com/3146183476b26082a3cbdfde3ec254b88dfa77c965948a-m9LekD_fw658");
+            background-size: cover;
+        }
+
+        h2{
+            padding-left: 50px;
+        }
+
+        #from {
+            border-top: 3px solid;
+            border-bottom: 3px solid;
+            display: inline-block;
+            margin: 200px 500px;
+        }
+
+        #from form h2 {
+
+            text-align: center;
+        }
+
+        .inputs span {
+
+            display: inline-block;
+            width: 100px;
+            height: 20px;
+            text-align: right;
+            font-size: 14px;
+
+        }
+
+        .inputs input {
+            width: 250px;
+            height: 30px;
+            padding: 0 5px;
+            border: 2px solid ivory;
+            border-radius: 15px;
+            position: relative;
+            margin: 20px 10px;
+            opacity: 0.5;
+        }
+
+        .bottoms input {
+            border-radius: 5px;
+            margin-right: 90px;
+            margin-bottom: 20px;
+            display: block;
+            float: right;
+            width: 50px;
+            height: 30px;
+            border: none;
+            /*background: linear-gradient(120deg, ivory, lightcyan, ivory);*/
+            background-color: black;
+            background-size: 200%;
+            opacity: 0.3;
+            outline: none;
+            cursor: pointer;
+           /* transition: .5s;*/
+            color: white;
+        }
+
+        .bottoms input:hover {
+            background-position: right;
+            opacity: 0.6;
+        }
+    </style>
+</head>
+<body>
+<div id="from">
+    <form action="/log" method="POST">
+        <h2>LoL登录界面</h2>
+
+        <div class="inputs">
+            <span>username</span>
+            <input type="text" name="user_name"/>
+        </div>
+
+        <div class="inputs">
+            <span>password</span>
+            <input type="password" name="user_pwd"/>
+        </div>
+
+        <span class="bottoms"><input type="submit" value="提交"/> </span>
+        <span class="bottoms"><input type="reset" value="重置"/> </span>
+        <a href="">a</a>
+    </form>
+</div>
+
+</body>
+</html>

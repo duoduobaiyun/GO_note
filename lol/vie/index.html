@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>英雄联盟</title>
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+            border: 0;
+            background-color: pink;
+        }
+        .div1 {
+            width: 500px;
+            height: auto;
+            padding: 50px;
+            margin: 100px auto;
+            background-color: bisque;
+        }
+
+        .div1 h2 {
+            background-color: bisque;
+            text-align: center;
+        }
+
+        .div1 ul li {
+            list-style: none;
+            padding-top: 20px;
+            background-color: bisque;
+        }
+
+        .div1 ul li span {
+            background-color: bisque;
+            width: 125px;
+            height: 30px;
+            display: inline-block;
+            text-align: right;
+            font-size: 14px;
+        }
+        .div1 ul li input[type="text"],.div1 ul li input[type="password"]{
+            width: 250px;
+            height: 30px;
+            background-color: white;
+        }
+        .div1 ul li input[type="submit"]{
+            color: white;
+            background-color: black;
+            width: 50px;
+            margin-left: 150px;
+            cursor: pointer;
+        }
+        .div1 ul li input[type="reset"]{
+            color: white;
+            background-color: black;
+            width: 50px;
+            margin-left: 50px;
+            cursor: pointer;
+        }
+        .div1 ul li a{
+            background-color: bisque;
+            color: white;
+            margin-left: 50px;
+            text-decoration-line: none;
+            font-size: 12px;
+        }
+        .div1 ul li input[type="submit"]:hover{
+            background-color: darkblue;
+        }
+        .div1 ul li input[type="reset"]:hover{
+            background-color: darkblue;
+        }
+    </style>
+</head>
+
+<body >
+<div class="div1">
+    <h2>英雄联盟管理员登录</h2>
+    <form action="/login" method="post">
+        <ul>
+            <li>
+                <span>管理员账号：</span>
+                <input type="text" name="user_name" />
+            </li>
+            <li>
+                <span>管理员密码：</span>
+                <input type="password" name="user_pwd" />
+            </li>
+            <li>
+                <input type="submit" name="login" value="登录" />
+                <input type="reset" name="reset" value="重置" />
+                <a href="register.html">注册新管理?</a>
+            </li>
+        </ul>
+    </form>
+</div>
+</body>
+
+</html>

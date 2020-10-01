@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LOL信息爬取页面</title>
+
+    <style>
+        *{
+            margin: 0px auto;
+            padding: 0px;
+        }
+        body {
+            width: 1500px;
+            height: 1000px;
+            position: absolute;
+            font-family: Forte;
+            background: url(//game.gtimg.cn/images/lol/act/a20200612summer/bg.jpg) no-repeat;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+
+        }
+
+        table{
+            width: 1400px;
+            text-align-all: center;
+            margin-top: 10px;
+            box-shadow: 0px 0px 40px blanchedalmond;
+            font-size: large;
+        }
+        table td {
+            text-align: center;
+            height: 50px;
+        }
+    </style>
+</head>
+<body >
+<video controls="controls" autoplay="autoplay" loop=-1  hidden="hidden">
+    <source src="http://aqqmusic.tc.qq.com/amobile.music.tc.qq.com/C400004R5rmz07En90.m4a?guid=2933488522&vkey=AEC7B6852B40BA6C5BFA04F715EC9A222772448A71A5833780ECD04D847F2CD059256BADEC2611B9B1ACF99E518E6D888941E9003A5434F2&uin=0&fromtag=38" type="audio/mp3" />
+    Your browser does not support the audio element.
+</video>
+<h1>欢迎你：{{.AdminName}}</h1>
+<table border="1px solid black">
+
+    <tr>
+        <td>编号</td>
+        <td>头像</td>
+        <td>英雄名称</td>
+        <td>英雄英文名</td>
+        <td>英雄统称</td>
+        <td>周免英雄</td>
+        <td>音频1</td>
+        <td>音频2</td>
+    </tr>
+    {{range .Hero}}
+        <tr>
+            <td>{{.HeroId}}</td>
+            <td><a href="https://lol.qq.com/data/info-defail.shtml?id={{.HeroId}}"><img src="https://game.gtimg.cn/images/lol/act/img/champion/{{.Alias}}.png" alt="hero" /></a></td>
+            <td>{{.Name}}</td>
+            <td>{{.Alias}}</td>
+            <td>{{.Title}}</td>
+            <td>{{.IsWeekFree}}</td>
+            <td><audio controls>
+                    <source src="{{.SelectAudio}}" type="audio/mpeg">
+                </audio></td>
+            <td><audio controls>
+                    <source src="{{.BanAudio}}" type="audio/mpeg">
+                </audio></td>
+        </tr>
+    {{end}}
+
+</table>
+</body>
+</html>

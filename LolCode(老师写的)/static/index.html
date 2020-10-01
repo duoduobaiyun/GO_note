@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>欢迎进入英雄联盟英雄信息系统</title>
+    <style type="text/css">
+        * {
+            background-color: pink;
+        }
+
+        .collect {
+            margin-left: 400px;
+            margin-top: 100px;
+        }
+
+        .collect h2 {
+            margin-bottom: 100px;
+        }
+
+        .collect a {
+            margin-left: 150px;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: #5964EB;
+            border: none;
+            text-decoration-line: none;
+            color: white;
+            font-size: 30px;
+            text-align: center;
+        }
+
+        .heros {
+            margin-left: 350px;
+            margin-top: 20px;
+        }
+
+        .heros h1 {
+            color: black;
+            margin-left: 30px;
+        }
+
+        .heros table {
+            border: 0;
+        }
+
+        .heros table tr {
+            border-width: 0;
+            text-align: center;
+        }
+
+        .head {
+            background-color: darkorange;
+            padding: 5px;
+        }
+
+        .body {
+            background-color: azure;
+        }
+
+        .body a {
+            color: blue;
+            font-size: 16px;
+            text-decoration-line: none;
+            background-color: azure;
+        }
+
+        .footer {
+            margin-left: 550px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+{{if .IsNeedSpiderData}}
+<div class="collect">
+    <h2>对不起，英雄暂时还未入库。先请英雄入库!</h2>
+    <a href="/collect">
+        英雄入库
+    </a>
+</div>
+{{end}}
+
+<div class="heros">
+    <h1>Welcome to League of Legends!</h1>
+    <table>
+        <tr class="head">
+            <td class="head">英雄编号</td>
+            <td class="head">英雄头像</td>
+            <td class="head">英雄代号</td>
+            <td class="head">英雄昵称</td>
+            <td class="head">英雄音效</td>
+            <td class="head">删除英雄</td>
+            <td class="head">修改信息</td>
+        </tr>
+    {{range .Heros}}
+        <tr>
+            <td class="body">{{.HeroId}}</td>
+            <td class="body"><img width="80px" height="80px" src="{{.Avatar}}"/></td>
+            <td class="body">{{.Name}}</td>
+            <td class="body">{{.Title}}</td>
+            <td class="body">
+                <a href="{{.SelectAudio}}">音效</a>
+            </td>
+            <td class="body"><a href="/delete?hero_id={{.HeroId}}">删除</a></td>
+            <td class="body"><a href="/update?hero_id={{.HeroId}}">修改</a></td>
+        </tr>
+    {{end}}
+    </table>
+</div>
+
+<div class="footer">
+{{if .IsPageButton}}
+    <a href="/pre?page_num={{.CurrentNum}}">上一页</a>
+    <a href="/next?page_num={{.CurrentNum}}" style="margin-left: 50px">下一页</a>
+{{end}}
+</div>
+</body>
+</html>

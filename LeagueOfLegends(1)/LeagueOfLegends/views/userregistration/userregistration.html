@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>新用户注册</title>
+</head>
+<style>
+    body {
+        font-family: Verdana;
+        background: url("http://view.jqueryfuns.com/2019/10/8/66c97ae3a39654c0039ac03d2fd07cec/images/1.jpg") no-repeat 0px 0px;
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+    }
+    h1 {
+        color: #FFF;
+        text-align: center;
+        letter-spacing: 6px;
+        font-size: 40px;
+        margin-top: 75px;
+    }
+    #cp{
+        background:#009FCC;
+        font-size:24px;
+        padding:5px;
+        color:white;
+    }
+    #postion {
+        margin: 150px auto;
+    }
+    form{
+        background: #F8F8FF ;
+        border:#357FC4 solid 1px;
+        color:#575454;
+        width:400px;
+        margin:20px auto;
+        font-size:15px;
+    }
+    table{
+        margin:10px auto;
+    }
+    a{
+        text-decoration:none;
+    }
+    input[type="button"]{
+        background:#228B22;
+        color:white;
+        font-size:15px;
+        font-weight:bold;
+        width:120px;
+        height:40px;
+    }
+    td:first-child{
+        text-align:right;
+        padding:0 5px;
+    }
+    td:only-child{
+        text-align:center;
+        font-size:12px;
+    }
+    span:before{
+        content:"* ";
+        color:red;
+    }
+    input[type="text"]:read-only{
+        border:#888484 solid 2px;
+        background:#888484;
+        font-weight:bold;
+    }
+    input[type="text"]:hover{
+        background:#EFD9AC;
+    }
+    input[type="button"]:hover{
+        cursor: pointer;
+    }
+</style>
+<body>
+<h1>League Of Legends</h1>
+<div id="postion">
+    <form action="/parsesi" method="post">
+        <div id="cp">注册账号</div>
+        <table>
+            <tr>
+                <td><span>用户名</span></td>
+                <td>
+                    <input type="text" name="user_name"  maxlength="10"/>
+                </td>
+            </tr>
+            <tr>
+                <td><span>email</span></td>
+                <td>
+                    <input type="text" name="user_email" />
+                </td>
+            </tr>
+            <tr>
+                <td><span>密码</span></td>
+                <td>
+                    <input type="password" name="user_password" />
+                </td>
+            </tr>
+            <tr>
+                <td><span>确认密码</span></td>
+                <td>
+                    <input type="password" name="user_confirm_password" />
+                </td>
+            </tr>
+            <tr>
+                <td>性别</td>
+                <td>
+                    <input type="radio"  name="user_sex" value="male" checked />男
+                    <input type="radio"  name="user_sex" value="female" />女</td>
+            </tr>
+            <tr>
+                <td>手机号码</td>
+                <td>
+                    <input type="text" name="user_phone1" maxlength="11"/>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="checkbox" checked/>我已看过并接受<a href="#">《用户协议》</a></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="submit" name="sub" value="NEXT" />
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+</body>
+</html>
